@@ -108,25 +108,21 @@ if (score >= 90) {
 
 console.log("End of the practice script.");
 console.log("Thank you for following along!");
+```
 
-🆎 Web-Based Example (Simple Node.js Server)
+🌐 Web-Based Example (Simple Node.js Server)
 Node.js Web Application contains the following parts:
 
-Import Required Module
+✅ Import Required Module
+✅ Create Server
+✅ Read Request and Return Response
 
-Create Server
-
-Read Request and Return Response
-
-✅ 1. Import Required Module
-js
-Copy
-Edit
+1️⃣ Import Required Module
+```
 var http = require('http');
-🌐 2. Create Server
-js
-Copy
-Edit
+```
+2️⃣ Create Server
+```
 http.createServer(function(request, response) {
     // Send HTTP header
     // HTTP Status: 200 OK
@@ -136,27 +132,24 @@ http.createServer(function(request, response) {
     // Send the response body as "Hello World"
     response.end("Hello World");
 }).listen(8081);
-📌 Note:
+```
+📌 Note
 In the second step, we call http.createServer() to create a server instance.
-
 Then we bind it to port 8081 using the listen() method.
-
 The function takes request and response parameters and writes "Hello World" as output.
 
 ▶️ How to Run the Code
 Save the file as app.js or server.js
 
-Open terminal/command prompt
+Open terminal or command prompt
 
-Run:
-
-bash
-Copy
-Edit
+Run the following command:
+```
 node app.js
-Visit in browser:
-
-arduino
-Copy
-Edit
+```
+Visit the URL in your browser:
+```
 http://localhost:8081
+```
+
+
