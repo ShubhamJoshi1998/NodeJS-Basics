@@ -133,6 +133,7 @@ http.createServer(function(request, response) {
     // Send the response body as "Hello World"
     response.end("Hello World");
 }).listen(8081);
+
 ```
 📌 Note
 In the second step, we call http.createServer() to create a server instance.
