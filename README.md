@@ -134,6 +134,7 @@ http.createServer(function(request, response) {
     response.end("Hello World");
 }).listen(8081);
 
+
 ```
 📌 Note
 In the second step, we call http.createServer() to create a server instance.
@@ -152,5 +153,54 @@ node app.js
 ```
 http://localhost:8081
 ```
+
+📁 File System Example using Node.js (fs Module)
+
+```
+// Import the 'fs' module for file operations
+const fs = require('fs');
+// Alternatively, to use promise-based methods:
+// const fs = require('fs').promises;
+
+// --- WRITE FILE ---
+
+// 🔸 Synchronous write (blocks execution)
+fs.writeFileSync('./test.txt', 'Hey There');
+
+// 🔹 Asynchronous write (non-blocking)
+fs.writeFile('./test.txt', 'Hey There', (err) => {
+  if (err) {
+    console.error("Error writing file:", err);
+    return;
+  }
+  console.log("File written successfully (async)");
+});
+
+// --- READ FILE ---
+
+// 🔸 Synchronous read (blocks execution)
+try {
+  const result = fs.readFileSync('./contacts.txt', 'utf8');
+  console.log("Synchronous read result:", result);
+} catch (err) {
+  console.error("Error reading file synchronously:", err);
+}
+
+// 🔹 Asynchronous read (non-blocking)
+fs.readFile('./contacts.txt', 'utf8', (err, data) => {
+  if (err) {
+    console.error("Error reading file asynchronously:", err);
+    return;
+  }
+  console.log("Asynchronous read result:", data);
+});
+```
+
+📌 **Note**:
+**Synchronous methods** like writeFileSync() and readFileSync() block the event loop. No other code runs until these finish.
+
+**Asynchronous methods** like writeFile() and readFile() allow other code to execute while waiting for I/O to complete — making them better for high-performance apps.
+
+
 
 
